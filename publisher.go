@@ -23,26 +23,24 @@ func main() {
 		url = "tcp://localhost:1883"
 	}
 
-	arg2 := os.Args[2]
-	json.Unmarshal([]byte(arg2), &obj)
+
 	clientID, ok := obj["clientID"].(string)
 	if !ok {
 		clientID = "publisher"
 	}
 
-	arg3 := os.Args[3]
-	json.Unmarshal([]byte(arg3), &obj)
+
 	message, ok := obj["message"].(string)
 	if !ok {
 		message = "world!"
 	}
 
-	arg4 := os.Args[4]
-	json.Unmarshal([]byte(arg4), &obj)
+
 	topic, ok := obj["topic"].(string)
 	if !ok {
 		topic = "topic/sample"
 	}
+
 	mqtt.DEBUG = log.New(os.Stdout, "", 0)
 	mqtt.ERROR = log.New(os.Stdout, "", 0)
 	opts := mqtt.NewClientOptions().AddBroker(url).SetClientID(clientID)
