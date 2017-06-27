@@ -43,13 +43,15 @@ func main() {
 	for {
 		time.Sleep(1 * time.Second)
 		count++
-		limit, _:=strconv.Atoi(os.Args[4])
+		limit, _ := strconv.Atoi(os.Args[4])
 		if count >= limit {
 			break
 		}
 	}
 
-	os.Exit(0)
+	msg := map[string]string{"msg": ("subscribed")}
+	res, _ := json.Marshal(msg)
+	fmt.Println(string(res))
 }
 
 func checkArgs() {

@@ -32,7 +32,9 @@ func main() {
 	token.Wait()
 	time.Sleep(20 * time.Second)
 	c.Disconnect(250)
-	os.Exit(0)
+	msg = map[string]string{"msg": ("published")}
+	res, _ = json.Marshal(msg)
+	fmt.Println(string(res))
 }
 
 func checkArg() {
