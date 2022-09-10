@@ -50,7 +50,7 @@ For the subscriber, you can reference the above section. There is a good [blog](
 about how to build and run Golang action on OpenWhisk.
 
 ## Run.
-TBC.
+TBD, stay tuned.
 
 
 
